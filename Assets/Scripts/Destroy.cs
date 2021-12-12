@@ -10,14 +10,21 @@ public class Destroy : MonoBehaviour
     [SerializeField] private GameObject explosion;
     
 
-
-    private void Update()
+    public void Update()
     {
+       if (Restart.isClicked == true)
+        {
+            Fall.finished = false;
+            Move.speed = 1;
+
+            Restart.isClicked = false;
+        }
         if (Fall.finished == true)
         {
+
             return;
         }
-
+      
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Input.GetKeyDown(KeyCode.Mouse0))

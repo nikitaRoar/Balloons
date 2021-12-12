@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
-    bool isClicked;
+    public static  bool isClicked;
 
     public void TaskOnClick()
     {
@@ -16,14 +16,5 @@ public class Restart : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
-
-    private void Update()
-    {
-        if (isClicked == true)
-        {
-            Move.speed = 1;
-        }
-    }
-
 
 }
